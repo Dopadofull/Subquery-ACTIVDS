@@ -1,0 +1,9 @@
+1_  DELETE FROM language WHERE name like "Japanese";
+    SELECT name FROM language;
+
+2_  DELETE FROM language WHERE language_id =
+    (SELECT language_id FROM language WHERE language_id is not "1")
+
+4_  DELETE FROM film_category WHERE category_id = (SELECT category_id from category WHERE name like "%Horror%");
+    DELETE from category WHERE name like "%Horror%";
+    SELECT name from category;

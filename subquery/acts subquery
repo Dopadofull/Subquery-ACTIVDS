@@ -1,0 +1,15 @@
+
+1_    SELECT name as Nombre, Milliseconds as Duracion FROM tracks
+    WHERE Albumid = (SELECT Albumid FROM albums WHERE title = "Outbreak")
+
+2_  SELECT title as Titulo FROM albums
+    WHERE ArtistId = (SELECT ArtistId FROM artists WHERE name = "Deep Purple")
+
+3_  SELECT name as Nombre, Milliseconds as Duracion FROM tracks
+    WHERE AlbumId IN (SELECT AlbumId FROM albums WHERE Title like "%Deep Purple%")
+
+4_  SELECT avg(suma) as Promedio FROM (SELECT sum(total) as suma FROM invoices
+    GROUP BY CustomerId)
+
+5_  SELECT name, max(Milliseconds) from tracks
+    WHERE AlbumId = (SELECT AlbumId FROM albums)
